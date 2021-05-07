@@ -8,15 +8,13 @@ plugins {
     id("com.github.johnrengelman.shadow") version "7.0.0"
 }
 
-val kotlinVersion: String by project
 val spongeVersion: String by project
 val pluginId: String by project
 val pluginName: String by project
 val pluginVersion: String by project
 
 group = "com.github.konge"
-version = "$pluginVersion-$kotlinVersion"
-
+version = pluginVersion
 
 repositories {
     mavenCentral()
@@ -60,9 +58,17 @@ dependencies {
     shadowApi("org.spongepowered:configurate-extra-kotlin:4.0.0") {
         isTransitive = false
     }
+
+    testImplementation(kotlin("test-junit5"))
 }
 
 tasks {
+    compileKotlin {
+        kotlinOptions {
+            jvmTarget = "1.8"
+        }
+    }
+
     jar { enabled = false }
     build { dependsOn(shadowJar) }
     artifacts { archives(shadowJar) }
@@ -80,12 +86,6 @@ tasks {
                 "org/intellij/lang/annotations/**",
                 "org/jetbrains/annotations/**"
             )
-        }
-    }
-
-    compileKotlin {
-        kotlinOptions {
-            jvmTarget = "1.8"
         }
     }
 }
