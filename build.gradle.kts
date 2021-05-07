@@ -2,6 +2,8 @@ import org.spongepowered.gradle.plugin.config.PluginLoaders
 import org.spongepowered.plugin.metadata.PluginDependency
 
 plugins {
+    `maven-publish`
+
     kotlin("jvm") version "1.5.0"
 
     id("org.spongepowered.gradle.plugin") version "1.1.0"
@@ -86,6 +88,18 @@ tasks {
                 "org/intellij/lang/annotations/**",
                 "org/jetbrains/annotations/**"
             )
+        }
+    }
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = project.group.toString()
+            artifactId = pluginId
+            version = pluginVersion
+
+            artifact(tasks.shadowJar)
         }
     }
 }
