@@ -27,7 +27,7 @@ sponge {
     plugin(pluginId) {
         loader(PluginLoaders.JAVA_PLAIN)
         displayName(pluginName)
-        mainClass("io.github.konge.Konge")
+        mainClass("com.github.konge.Konge")
         description("Fluent Kotlin developing on Sponge")
         contributor("SettingDust") {
             description("Owner")
