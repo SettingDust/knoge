@@ -2,6 +2,7 @@
 /shelf/
 /workspace.xml
 /gradle.xml
+/discord.xml
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml

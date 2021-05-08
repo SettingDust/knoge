@@ -71,12 +71,10 @@ tasks {
         }
     }
 
-    jar { enabled = false }
-    build { dependsOn(shadowJar) }
-    artifacts { archives(shadowJar) }
+    build { dependsOn(shadowJar, kotlinSourcesJar) }
     shadowJar {
         configurations = listOf(project.configurations.shadow.get())
-        archiveClassifier.set("")
+        archiveClassifier.set("all")
 
         minimize {
             exclude(
@@ -99,7 +97,8 @@ publishing {
             artifactId = pluginId
             version = pluginVersion
 
-            artifact(tasks.shadowJar)
+            from(components["java"])
+            artifact(tasks.kotlinSourcesJar)
         }
     }
 }
