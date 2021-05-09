@@ -61,6 +61,10 @@ dependencies {
         isTransitive = false
     }
 
+    shadowApi("dev.misfitlabs.kotlinguice4:kotlin-guice:1.5.0") {
+        isTransitive = false
+    }
+
     testImplementation(kotlin("test-junit5"))
 }
 
