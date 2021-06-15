@@ -45,7 +45,7 @@ fun WatchServiceListener.listenToDirectory(path: Path): Flow<WatchEvent<*>> = ca
 fun <N : ScopedConfigurationNode<N>> Path.listenConfiguration(
     listener: WatchServiceListener,
     loaderFunc: (Path) -> ConfigurationLoader<N>
-): ConfigurationReference<N>? = listener.listenToConfiguration(loaderFunc, this)
+): ConfigurationReference<N> = listener.listenToConfiguration(loaderFunc, this)
 
 suspend fun Path.listenProperties(
     listener: WatchServiceListener
