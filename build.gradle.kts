@@ -6,7 +6,7 @@ plugins {
 
     kotlin("jvm") version "1.5.0"
 
-    id("org.spongepowered.gradle.plugin") version "1.1.0"
+    id("org.spongepowered.gradle.plugin") version "1.1.1"
     id("com.github.johnrengelman.shadow") version "7.0.0"
 }
 
