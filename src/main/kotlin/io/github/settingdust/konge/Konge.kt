@@ -1,4 +1,4 @@
-package com.github.konge
+package io.github.settingdust.konge
 
 import com.google.inject.Inject
 import org.apache.logging.log4j.Logger

@@ -1,4 +1,4 @@
-package com.github.konge.configurate
+package io.github.settingdust.konge.configurate
 
 import org.spongepowered.configurate.reactive.Subscriber
 import java.nio.file.Path

@@ -1,4 +1,4 @@
-package com.github.konge
+package io.github.settingdust.konge
 
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.trySendBlocking

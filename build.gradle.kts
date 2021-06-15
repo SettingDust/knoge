@@ -15,7 +15,7 @@ val pluginId: String by project
 val pluginName: String by project
 val pluginVersion: String by project
 
-group = "com.github.konge"
+group = "io.github.settingdust"
 version = pluginVersion
 
 repositories {

@@ -1,7 +1,7 @@
-package com.github.konge.configurate
+package io.github.settingdust.konge.configurate
 
-import com.github.konge.listen
-import com.github.konge.properties
+import io.github.settingdust.konge.listen
+import io.github.settingdust.konge.properties
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.ProducerScope
 import kotlinx.coroutines.channels.trySendBlocking

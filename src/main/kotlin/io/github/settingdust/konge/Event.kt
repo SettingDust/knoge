@@ -1,4 +1,4 @@
-package com.github.konge
+package io.github.settingdust.konge
 
 import io.leangen.geantyref.TypeToken
 import org.spongepowered.api.Sponge
