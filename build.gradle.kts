@@ -57,7 +57,7 @@ dependencies {
     shadowApi(kotlin("reflect"))
     shadowApi("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.5.0-RC")
 
-    shadowApi("org.spongepowered:configurate-extra-kotlin:4.0.0") {
+    shadowApi("org.spongepowered:configurate-extra-kotlin:4.1.1") {
         isTransitive = false
     }
 
