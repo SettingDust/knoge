@@ -121,10 +121,14 @@ private object DataClassFieldDiscoverer : FieldDiscoverer<MutableMap<KParameter,
             }
 
             override fun complete(instance: Any?, intermediate: MutableMap<KParameter, Any?>?) {
-                if (instance == null) return
+                if (intermediate == null || instance == null) return
                 properties.forEach { prop ->
-                    prop.javaField?.isAccessible = true
-                    prop.javaField?.set(instance, intermediate?.firstNotNullOfOrNull { prop.name })
+                    val field = prop.javaField ?: return@forEach
+                    val value = intermediate
+                        .firstNotNullOfOrNull { if (it.key.name == prop.name) it.value else null }
+                        ?: return@forEach
+                    field.isAccessible = true
+                    field.set(instance, value)
                 }
             }
 
