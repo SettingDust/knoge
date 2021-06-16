@@ -56,8 +56,8 @@ fun dataClassFieldDiscoverer(): FieldDiscoverer<*> {
 /**
  * Get an object mapper for the type [T] using the default object mapper factory
  */
-inline fun <reified T> objectMapper(): ObjectMapper<T> {
-    return objectMapperFactory()[typeTokenOf()]
+inline fun <reified T> objectMapper(): ObjectMapper.Mutable<T> {
+    return objectMapperFactory()[typeTokenOf<T>()] as ObjectMapper.Mutable<T>
 }
 
 /**
